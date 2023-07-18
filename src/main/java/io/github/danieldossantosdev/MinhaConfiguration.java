@@ -1,10 +1,16 @@
 package io.github.danieldossantosdev;
+
+import io.github.danieldossantosdev.service.Development;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-@Configuration
+
+
+@Development
 public class MinhaConfiguration {
-    @Bean(name = "applicationName")
-    public String aplicationName(){
-            return "Sistema de vendas";
-        }
+    @Bean
+    public CommandLineRunner executar (){
+        return args -> {
+    System.out.println("Rodando a Configuração de desenvolvimento");
+        };
+    }
 }
